@@ -1,12 +1,12 @@
 //import { assert } from "chai";
+import { Element, Link, Model, draw } from "index";
 
-// describe('DSL test', ()=>{
-//     const d = Diagram('title')
-//         .onMesh(10,20)
-//         .create((mesh)=>{
-//             const a = Actor('name a');
-//             const b = Element('name b', 'https://cdn.io/mypic');
 
-            
-//         })
-// });
+describe('DSL test', async ()=>{
+
+    const a = new Element('name a', 'https://min.io/resources/img/footer/logo.svg');
+    const b = new Element('name b', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGLvTEsIFVg4Xjq362dlIoNfqqNoh7sNhApg&s');
+    const l = new Link(a,b,"uses");
+
+    await draw(new Model().add(a,b,l))
+});

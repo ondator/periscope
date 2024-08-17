@@ -1,10 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { Stats } = require('webpack');
 
 
 module.exports = {
+  stats:{
+    errorDetails: true,
+  },
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   module: {
     rules: [
       {
